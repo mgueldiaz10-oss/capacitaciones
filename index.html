@@ -368,21 +368,88 @@
           <article class="slide" id="slide-7" data-speaker-notes="En esta diapositiva mostramos visualmente cómo se ubica cada elemento en la recta dimensional para un calibrador tapón de agujero. Vean cómo la tolerancia de la pieza alberga dentro de sí la tolerancia del gage y el margen de desgaste, protegiendo 100% al cliente final.">
             <span class="slide-header-badge">Módulo 6 &middot; Visualización Geométrica</span>
             <h2 class="slide-title">Diagrama de Distribución de Tolerancias en Plug Gage</h2>
-            <p class="slide-subtitle">Distribución en la recta dimensional bajo Práctica Absoluta ASME Y14.43</p>
+            <p class="slide-subtitle">Distribución en la recta dimensional bajo Práctica Absoluta ASME Y14.43 (Ejemplo: Agujero Ø25.000 +0.050 mm)</p>
 
             <div class="diagram-container">
-              <svg id="slideGageSvg" class="diagram-svg" viewBox="0 0 800 240"></svg>
+              <svg id="slideGageSvg" class="diagram-svg" viewBox="0 0 800 240">
+                <defs>
+                  <linearGradient id="partGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.3"/>
+                  </linearGradient>
+                  <linearGradient id="goGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#10b981" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#34d399" stop-opacity="0.9"/>
+                  </linearGradient>
+                  <linearGradient id="nogoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ef4444" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#f87171" stop-opacity="0.9"/>
+                  </linearGradient>
+                </defs>
+                <!-- Tolerancia de la pieza -->
+                <rect x="100" y="60" width="600" height="70" fill="url(#partGrad)" stroke="#38bdf8" stroke-width="2" rx="6" />
+                <text x="400" y="45" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">
+                  ZONA DE TOLERANCIA DEL PRODUCTO (0.050 mm) &middot; Agujero Ø25.000 a Ø25.050 mm
+                </text>
+                
+                <!-- Línea MMC y LMC -->
+                <line x1="100" y1="52" x2="100" y2="150" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,4" />
+                <text x="100" y="165" fill="#9ca3af" font-size="12" font-family="JetBrains Mono, monospace" text-anchor="middle">
+                  MMC (25.000 mm)
+                </text>
+
+                <line x1="700" y1="52" x2="700" y2="150" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,4" />
+                <text x="700" y="165" fill="#9ca3af" font-size="12" font-family="JetBrains Mono, monospace" text-anchor="middle">
+                  LMC (25.050 mm)
+                </text>
+
+                <!-- Tolerancia Gage GO (Verde) -->
+                <rect x="115" y="72" width="55" height="46" fill="url(#goGrad)" stroke="#10b981" stroke-width="1.5" rx="4" />
+                <text x="142" y="99" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">
+                  GO
+                </text>
+                <text x="142" y="113" fill="#e6fffa" font-size="9" text-anchor="middle" font-family="JetBrains Mono, monospace">
+                  Tol. Gage
+                </text>
+
+                <!-- Margen de desgaste (Ámbar) -->
+                <rect x="100" y="72" width="15" height="46" fill="#f59e0b" fill-opacity="0.8" stroke="#d97706" stroke-width="1.5" rx="2" />
+                <text x="107.5" y="99" fill="#fff" font-size="9" font-weight="800" text-anchor="middle">W</text>
+
+                <!-- Tolerancia Gage NOGO (Rojo) -->
+                <rect x="645" y="72" width="55" height="46" fill="url(#nogoGrad)" stroke="#ef4444" stroke-width="1.5" rx="4" />
+                <text x="672" y="99" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">
+                  NO-GO
+                </text>
+                <text x="672" y="113" fill="#ffe4e6" font-size="9" text-anchor="middle" font-family="JetBrains Mono, monospace">
+                  Tol. Gage
+                </text>
+
+                <!-- Leyenda Práctica ASME Y14.43 -->
+                <text x="400" y="215" fill="#9ca3af" font-size="11" text-anchor="middle" font-family="Inter, sans-serif">
+                  Asignación de Tolerancias: Práctica Absoluta ASME Y14.43 (100% Garantía dentro de especificación)
+                </text>
+              </svg>
             </div>
 
             <div class="grid-3" style="margin-top: 1rem;">
-              <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                <strong style="color: var(--brand-part-tol);">■ Tolerancia de Pieza:</strong> Rango permitido en el plano de ingeniería (LSL a USL).
+              <div class="metro-card" style="padding: 0.85rem; border-left: 3px solid var(--color-wear);">
+                <strong style="color: var(--color-wear); font-size: 0.85rem;">■ Margen Desgaste (+W):</strong>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                  +0.0020 mm (5% de la tolerancia de pieza). Protege la vida del calibrador en producción.
+                </p>
               </div>
-              <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                <strong style="color: var(--color-wear);">■ Margen de Desgaste (W):</strong> Reserva inicial de material en extremo GO para amortiguar la abrasión.
+              <div class="metro-card" style="padding: 0.85rem; border-left: 3px solid var(--color-go);">
+                <strong style="color: var(--color-go); font-size: 0.85rem;">■ Extremo GO (Clase X):</strong>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                  Límites: Ø25.002 a Ø25.004 mm. Tolerancia de fabricación AMG = 0.002 mm (4% de la pieza).
+                </p>
               </div>
-              <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                <strong style="color: var(--color-go);">■ Tolerancia GO</strong> / <strong style="color: var(--color-nogo);">■ NO-GO:</strong> Dispersión de manufactura del fabricante del gage (AMG).
+              <div class="metro-card" style="padding: 0.85rem; border-left: 3px solid var(--color-nogo);">
+                <strong style="color: var(--color-nogo); font-size: 0.85rem;">■ Extremo NO-GO (Clase X):</strong>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                  Límites: Ø25.048 a Ø25.050 mm. Cero piezas fuera de especificación aceptadas.
+                </p>
               </div>
             </div>
           </article>
@@ -433,28 +500,85 @@
           <article class="slide" id="slide-9" data-speaker-notes="Miren este gráfico de la norma ASME B89.7.3.1. Entre la zona de aceptación estricta y la zona de rechazo se encuentra la zona de ambigüedad o duda, igual al guardband. En un contrato de calidad, si no se especifica la regla de decisión por escrito, surgen disputas legales entre proveedor y cliente cuando una pieza cae en esta franja.">
             <span class="slide-header-badge">Módulo 8 &middot; Zonas de Conformidad</span>
             <h2 class="slide-title">Zonas de Decisión: Aceptación, Guardband y Rechazo</h2>
-            <p class="slide-subtitle">Distribución operativa de los límites según ASME B89.7.3.1</p>
+            <p class="slide-subtitle">Distribución operativa de los límites según ASME B89.7.3.1 (Caso: 25.000 &plusmn;0.020 mm, \(U_{95}=\pm 0.0025\) mm, TUR = 8.0:1)</p>
 
             <div class="diagram-container">
               <svg id="slideGuardbandSvg" class="diagram-svg" viewBox="0 0 800 220">
-                <!-- Se actualiza con el mismo motor de render -->
+                <defs>
+                  <pattern id="diagonalHatchSlide" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                    <line x1="0" y1="0" x2="0" y2="8" stroke="#8b5cf6" stroke-width="1.5" />
+                  </pattern>
+                </defs>
+
+                <!-- Zona de Rechazo Izquierda -->
+                <rect x="20" y="50" width="60" height="80" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="1.5" />
+                <text x="50" y="95" fill="#ef4444" font-size="11" font-weight="700" text-anchor="middle">RECHAZO</text>
+
+                <!-- Guardband Inferior (Zona de Duda) -->
+                <rect x="80" y="50" width="50" height="80" fill="url(#diagonalHatchSlide)" stroke="#8b5cf6" stroke-width="1.5" />
+                <text x="105" y="95" fill="#8b5cf6" font-size="10" font-weight="700" text-anchor="middle">GUARDBAND</text>
+
+                <!-- Zona de Aceptación Estricta -->
+                <rect x="130" y="50" width="540" height="80" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2" />
+                <text x="400" y="85" fill="#10b981" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter, sans-serif">
+                  ZONA DE ACEPTACIÓN SEGURA (CONFORME)
+                </text>
+                <text x="400" y="105" fill="#9ca3af" font-size="11" text-anchor="middle" font-family="JetBrains Mono, monospace">
+                  Riesgo del Consumidor &beta; &lt; 2% &middot; TUR = 8.0:1 (&ge; 4:1 ASME Recomendado)
+                </text>
+
+                <!-- Guardband Superior (Zona de Duda) -->
+                <rect x="670" y="50" width="50" height="80" fill="url(#diagonalHatchSlide)" stroke="#8b5cf6" stroke-width="1.5" />
+                <text x="695" y="95" fill="#8b5cf6" font-size="10" font-weight="700" text-anchor="middle">GUARDBAND</text>
+
+                <!-- Zona de Rechazo Derecha -->
+                <rect x="720" y="50" width="60" height="80" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="1.5" />
+                <text x="750" y="95" fill="#ef4444" font-size="11" font-weight="700" text-anchor="middle">RECHAZO</text>
+
+                <!-- Marcadores de LSL y USL -->
+                <line x1="80" y1="40" x2="80" y2="150" stroke="#f3f4f6" stroke-width="2" />
+                <text x="80" y="165" fill="#f3f4f6" font-size="11" font-family="JetBrains Mono, monospace" text-anchor="middle">
+                  LSL = 24.980
+                </text>
+
+                <line x1="720" y1="40" x2="720" y2="150" stroke="#f3f4f6" stroke-width="2" />
+                <text x="720" y="165" fill="#f3f4f6" font-size="11" font-family="JetBrains Mono, monospace" text-anchor="middle">
+                  USL = 25.020
+                </text>
+
+                <!-- Límites de Aceptación con Guardband -->
+                <line x1="130" y1="50" x2="130" y2="140" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="3,3" />
+                <text x="130" y="42" fill="#8b5cf6" font-size="10" font-family="JetBrains Mono, monospace" text-anchor="middle">
+                  LSL + g (24.9825)
+                </text>
+
+                <line x1="670" y1="50" x2="670" y2="140" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="3,3" />
+                <text x="670" y="42" fill="#8b5cf6" font-size="10" font-family="JetBrains Mono, monospace" text-anchor="middle">
+                  USL - g (25.0175)
+                </text>
               </svg>
             </div>
 
             <div class="grid-3" style="margin-top: 1rem;">
-              <div class="metro-card" style="padding: 1rem;">
-                <h4 style="color: var(--color-go); font-size: 0.95rem;">Zona de Aceptación Segura</h4>
-                <p style="font-size: 0.8rem; color: var(--text-secondary);">Medición dentro de \([LSL+g, USL-g]\). Certeza estadística del 95% de conformidad real.</p>
+              <div class="metro-card" style="padding: 0.85rem; border-left: 3px solid var(--color-go);">
+                <h4 style="color: var(--color-go); font-size: 0.95rem;">Zona Aceptación [LSL+g, USL-g]</h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                  Intervalo seguro: <strong>24.9825 a 25.0175 mm</strong>. Certeza estadística del 95% de conformidad física real.
+                </p>
               </div>
 
-              <div class="metro-card" style="padding: 1rem;">
-                <h4 style="color: var(--brand-guardband); font-size: 0.95rem;">Zona de Indeterminación</h4>
-                <p style="font-size: 0.8rem; color: var(--text-secondary);">Medición entre el límite y \(g\). No se puede garantizar conformidad sin riesgo compartido.</p>
+              <div class="metro-card" style="padding: 0.85rem; border-left: 3px solid var(--brand-guardband);">
+                <h4 style="color: var(--brand-guardband); font-size: 0.95rem;">Franja Guardband (g = 1.0 &times; U)</h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                  Amplitud de resguardo: <strong>0.0025 mm</strong> en cada extremo. Protege de falsas liberaciones al cliente.
+                </p>
               </div>
 
-              <div class="metro-card" style="padding: 1rem;">
-                <h4 style="color: var(--color-nogo); font-size: 0.95rem;">Zona de Rechazo Claro</h4>
-                <p style="font-size: 0.8rem; color: var(--text-secondary);">Medición fuera de los límites de especificación con certeza estadística demostrada.</p>
+              <div class="metro-card" style="padding: 0.85rem; border-left: 3px solid var(--color-nogo);">
+                <h4 style="color: var(--color-nogo); font-size: 0.95rem;">Zona de Rechazo Indiscutible</h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                  Valores &lt; 24.980 o &gt; 25.020 mm. Piezas fuera de tolerancia contractual garantizadas.
+                </p>
               </div>
             </div>
           </article>

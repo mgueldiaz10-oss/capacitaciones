@@ -67,6 +67,7 @@
     setupCalculators();
     setupQuiz();
     setupTimer();
+    renderAllSlideDiagrams();
     updateSlide(0);
     renderTablePreview('mm');
   }
@@ -128,9 +129,9 @@
       notesContent.innerHTML = `<p>${currentNotes}</p>`;
     }
 
-    // Dynamic renders on specific slides
-    if (slides[currentSlide].id === 'slide-tolerance-diagram') {
-      renderSlideDiagram();
+    // Dynamic renders on specific slides (Slide 7 y Slide 9)
+    if (slides[currentSlide].id === 'slide-7' || slides[currentSlide].id === 'slide-9') {
+      renderAllSlideDiagrams();
     }
   }
 
@@ -246,6 +247,7 @@
       // Redraw any dynamic SVGs
       calculateGage();
       calculateGuardband();
+      renderAllSlideDiagrams();
     });
   }
 
@@ -760,8 +762,8 @@
     });
   }
 
-  // Diagram for slide view
-  function renderSlideDiagram() {
+  // Diagrams for slide view (Slide 7 y Slide 9)
+  function renderAllSlideDiagrams() {
     renderGageToleranceDiagram('slideGageSvg', {
       gageType: 'plug',
       unitLabel: 'mm',
@@ -773,6 +775,15 @@
       nogoMax: 25.050,
       wearVal: 0.002,
       gageTolVal: 0.002
+    });
+
+    renderGuardbandSvg('slideGuardbandSvg', {
+      lsl: 24.980,
+      usl: 25.020,
+      u95: 0.0025,
+      guardband: 0.0025,
+      lowerAccept: 24.9825,
+      upperAccept: 25.0175
     });
   }
 
