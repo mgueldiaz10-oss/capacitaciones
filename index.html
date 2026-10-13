@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tolerancias Metrológicas para Gages (ASME) | All Measuring Gage</title>
+  <meta name="description" content="Capacitación Empresarial de Alto Rigor Técnico: Tolerancias Metrológicas para Gages con base en ASME B89.1.5, ASME B89.7.3.1, ASME Y14.43 y ASME B89.6.2. Presenta la Ing. Patricia Flores Reyes en All Measuring Gage.">
+  <meta name="author" content="Ing. Patricia Flores Reyes - All Measuring Gage">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tolerancias Metrológicas para Gages (ASME) - Capacitación">
+  <meta property="og:description" content="Capacitación técnica empresarial en dimensionamiento, clases de tolerancia y reglas de decisión para calibradores dimensionales según normas ASME.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230284c7%22/><text y=%2268%22 x=%2250%22 text-anchor=%22middle%22 font-size=%2260%22 font-weight=%22bold%22 fill=%22white%22>AMG</text></svg>">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for crisp mathematical formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}]});"></script>
+
+  <!-- Application Stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- BARRA SUPERIOR DE NAVEGACIÓN Y CONTROL -->
+    <header class="top-navbar">
+      <div class="brand-container">
+        <div class="brand-logo-mark">AMG</div>
+        <div class="brand-meta">
+          <h1>ALL MEASURING GAGE</h1>
+          <p>División de Metrología Dimensional &middot; Capacitación Técnica</p>
+        </div>
+      </div>
+
+      <!-- Selector de Modo de Vista -->
+      <nav class="view-mode-pill" aria-label="Modo de Vista">
+        <button class="mode-btn active" data-mode="presentation" title="Modo Presentación de Diapositivas">
+          <span>🖥️</span> <span>Presentación</span>
+        </button>
+        <button class="mode-btn" data-mode="document" title="Modo Manual Técnico Completo">
+          <span>📖</span> <span>Manual Técnico</span>
+        </button>
+        <button class="mode-btn" data-mode="calculator" title="Calculadoras de Tolerancias y Decisión ASME">
+          <span>🧮</span> <span>Calculadoras</span>
+        </button>
+        <button class="mode-btn" data-mode="quiz" title="Quiz Técnico de Evaluación">
+          <span>📝</span> <span>Evaluación</span>
+        </button>
+      </nav>
+
+      <!-- Botones de Acción Globales -->
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="action-icon-btn" title="Alternar Modo Oscuro / Claro" aria-label="Cambiar Tema">☀️</button>
+        <button id="fullscreenBtn" class="action-icon-btn" title="Pantalla Completa (Tecla F)" aria-label="Pantalla Completa">⛶</button>
+        <button class="action-icon-btn" onclick="window.print()" title="Imprimir o Exportar a PDF" aria-label="Imprimir">🖨️</button>
+      </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL DE VISTAS -->
+    <main class="main-content-view">
+
+      <!-- ====================================================================
+           VISTA 1: MODO PRESENTACIÓN (SLIDES INTERACTIVAS)
+           ==================================================================== -->
+      <section id="presentationView" class="presentation-view">
+        <div class="slide-viewport">
+
+          <!-- SLIDE 1: PORTADA -->
+          <article class="slide active" id="slide-1" data-speaker-notes="Bienvenidos a todos los asistentes. Soy la Ing. Patricia Flores Reyes de All Measuring Gage. Hoy abordaremos las tolerancias metrológicas para gages con el máximo rigor técnico fundamentado en la organización ASME. Destacaremos por qué la inspección funcional con calibradores pasa/no-pasa sigue siendo vital en la industria actual y cómo las normas ASME B89 y Y14 rigen su diseño y aceptación.">
+            <span class="slide-header-badge">Capacitación Técnica Empresarial &middot; ASME Standard</span>
+            <h1 class="slide-title">Tolerancias Metrológicas para Gages</h1>
+            <p class="slide-subtitle">Fundamentos Normativos ASME, Clases de Fabricación, Principio de Taylor y Gestión de Incertidumbre en Control Dimensional</p>
+
+            <div class="grid-2" style="margin-top: 1.5rem;">
+              <div class="metro-card highlight">
+                <div class="metro-card-header">
+                  <span class="metro-card-title"><span>👤</span> Expositora Oficial</span>
+                  <span class="metro-badge asme">Ponente</span>
+                </div>
+                <h3 style="font-size: 1.35rem; color: var(--brand-cyan); margin-bottom: 0.25rem;">Ing. Patricia Flores Reyes</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Especialista en Metrología Dimensional, GD&T y Sistemas de Calibración</p>
+                <div style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                  <strong style="color: var(--text-primary); font-size: 0.9rem;">Empresa:</strong>
+                  <span style="color: var(--brand-cyan); font-weight: 700;"> ALL MEASURING GAGE</span>
+                </div>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title"><span>📐</span> Marco Normativo Cubierto</span>
+                  <span class="metro-badge go">ASME Suite</span>
+                </div>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.9rem; color: var(--text-secondary);">
+                  <li><strong style="color: var(--brand-cyan);">ASME B89.1.5:</strong> Calibradores Cilíndricos y Clases de Tolerancia XX a ZZ.</li>
+                  <li><strong style="color: var(--brand-cyan);">ASME B89.7.3.1:</strong> Reglas de Decisión, Guardbanding y Test Uncertainty Ratio (TUR).</li>
+                  <li><strong style="color: var(--brand-cyan);">ASME Y14.43:</strong> Principios de Dimensionamiento de Gages Funcionales y Principio de Taylor.</li>
+                  <li><strong style="color: var(--brand-cyan);">ASME B89.6.2:</strong> Temperatura de Referencia (20°C) y Efectos de Dilatación Térmica.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="callout" style="margin-top: 1.5rem;">
+              <div class="callout-title"><span>💡</span> Atajos de Teclado para la Presentación</div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">Usa las teclas <strong>[Flecha Derecha]</strong> o <strong>[Espacio]</strong> para avanzar, <strong>[Flecha Izquierda]</strong> para retroceder, <strong>[N]</strong> para activar notas del orador y <strong>[F]</strong> para pantalla completa.</p>
+            </div>
+          </article>
+
+          <!-- SLIDE 2: OBJETIVOS Y JUSTIFICACIÓN TÉCNICA -->
+          <article class="slide" id="slide-2" data-speaker-notes="Es común escuchar en la industria que las CMM y los escáneres ópticos reemplazarán los gages duros. Sin embargo, un calibrador GO/NO-GO verifica la envolvente tridimensional completa de ensamble en menos de dos segundos, sin latencia de software ni dependencia del algoritmo de ajuste de la CMM. Explicaremos las 3 ventajas técnicas fundamentales.">
+            <span class="slide-header-badge">Módulo 1 &middot; Fundamentos Metrológicos</span>
+            <h2 class="slide-title">¿Por qué Gages Físicos en la Era de CMM y Escáneres 3D?</h2>
+            <p class="slide-subtitle">La relevancia de la inspección funcional rápida y determinista en líneas de manufactura seriada</p>
+
+            <div class="grid-3">
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title"><span>⚡</span> Inspección 100% en Línea</span>
+                  <span class="metro-badge go">&lt; 2 Segundos</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Evaluación instantánea pasa/no-pasa sin requerir alineaciones complejas, programación de software ni tiempos de procesamiento CMM.</p>
+                <div class="callout" style="margin-top: 0.75rem; padding: 0.5rem 0.75rem; font-size: 0.8rem;">
+                  Ideal para ciclos de producción automotriz de alto volumen (takt times &lt; 30s).
+                </div>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title"><span>🧩</span> Verificación de Envolvente</span>
+                  <span class="metro-badge asme">Taylor MMC</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">A diferencia de una CMM que palpa puntos discretos, el gage cilíndrico PASA verifica simultáneamente el tamaño, la rectitud, la redondez y la conicidad en toda la longitud funcional de acoplamiento.</p>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title"><span>🛡️</span> Robustez &amp; Repetibilidad</span>
+                  <span class="metro-badge go">Gage R&amp;R</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Elimina la dispersión por criterio del operador. El calibrador físico simula la pieza de contraparte real (Worst-Case Functional Boundary).</p>
+              </div>
+            </div>
+
+            <div class="callout warning" style="margin-top: 1.5rem;">
+              <div class="callout-title"><span>⚠️</span> El Gran Riesgo Metrológico</div>
+              <p style="font-size: 0.875rem;">Si las tolerancias de fabricación del propio gage y su desgaste no se diseñan rigurosamente conforme a las normas ASME, el calibrador rechazará piezas conformes (costo para la empresa) o aceptará piezas no conformes (falla crítica en campo para el cliente).</p>
+            </div>
+          </article>
+
+          <!-- SLIDE 3: EL PRINCIPIO DE TAYLOR (ASME Y14.43) -->
+          <article class="slide" id="slide-3" data-speaker-notes="El principio de William Taylor de 1905, codificado en ASME Y14.43 e ISO 1938, es la piedra angular. El calibrador PASA inspecciona el límite de máxima materia (MMC) y debe ser de longitud funcional completa. El calibrador NO PASA debe inspeccionar la condición de mínima materia (LMC) en contacto de dos puntos.">
+            <span class="slide-header-badge">Módulo 2 &middot; Principios de Diseño ASME Y14.43</span>
+            <h2 class="slide-title">El Principio de Taylor y Gages Funcionales</h2>
+            <p class="slide-subtitle">Condición de Máximo Material (MMC) vs Condición de Mínimo Material (LMC)</p>
+
+            <div class="grid-2">
+              <div class="metro-card" style="border-top: 4px solid var(--color-go);">
+                <div class="metro-card-header">
+                  <span class="metro-card-title"><span>🟢</span> Calibrador PASA (GO Gage)</span>
+                  <span class="metro-badge go">MMC Boundary</span>
+                </div>
+                <ul style="font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.65rem;">
+                  <li><strong>Límite inspeccionado:</strong> Condición de Máximo Material (MMC). En un agujero es el diámetro mínimo; en un eje es el diámetro máximo.</li>
+                  <li><strong>Geometría del Gage:</strong> Longitud completa equivalente a la longitud funcional del ensamble.</li>
+                  <li><strong>Función combinada:</strong> Verifica tamaño y errores de forma simultáneamente (rectitud del eje, circularidad, cilindricidad).</li>
+                  <li><strong>Criterio de Aceptación:</strong> Debe entrar suavemente a lo largo de toda la característica bajo su propio peso o fuerza leve estandarizada.</li>
+                </ul>
+              </div>
+
+              <div class="metro-card" style="border-top: 4px solid var(--color-nogo);">
+                <div class="metro-card-header">
+                  <span class="metro-card-title"><span>🔴</span> Calibrador NO PASA (NO-GO Gage)</span>
+                  <span class="metro-badge nogo">LMC Boundary</span>
+                </div>
+                <ul style="font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.65rem;">
+                  <li><strong>Límite inspeccionado:</strong> Condición de Mínimo Material (LMC). En un agujero es el diámetro máximo; en un eje es el diámetro mínimo.</li>
+                  <li><strong>Geometría del Gage:</strong> Contacto local puntual o de corta longitud (típicamente pasadores cortos o puntas esféricas).</li>
+                  <li><strong>Función puntual:</strong> Inspecciona exclusivamente la dimensión seccional local para asegurar que no falte material.</li>
+                  <li><strong>Criterio de Aceptación:</strong> NO debe entrar más de 2 vueltas o más allá de la entrada de chaflán.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              Principio de Envolvente (Rule #1 ASME Y14.5): Límite de Tamaño MMC = Frontera Verificada por el Calibrador GO
+            </div>
+          </article>
+
+          <!-- SLIDE 4: POLÍTICAS DE ASIGNACIÓN DE TOLERANCIAS (ASME Y14.43) -->
+          <article class="slide" id="slide-4" data-speaker-notes="ASME Y14.43 contempla tres filosofías de asignación de tolerancia. En All Measuring Gage fabricamos predominantemente bajo la Práctica Absoluta o Pesimista para industrias aeroespacial y médica, donde el riesgo de aceptar una pieza defectuosa es inaceptable.">
+            <span class="slide-header-badge">Módulo 3 &middot; Asignación de Tolerancias</span>
+            <h2 class="slide-title">Políticas de Asignación de Tolerancia para Gages</h2>
+            <p class="slide-subtitle">Comparativa técnica entre Práctica Absoluta, Optimista y Dividida (ASME Y14.43)</p>
+
+            <div class="grid-3">
+              <div class="metro-card highlight">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Práctica Absoluta (Pesimista)</span>
+                  <span class="metro-badge asme">Recomendada</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                  Toda la tolerancia de manufactura del gage y su margen de desgaste quedan <strong>100% dentro</strong> de los límites de tolerancia de la pieza.
+                </p>
+                <div class="callout success" style="font-size: 0.8rem; padding: 0.5rem;">
+                  <strong>Ventaja:</strong> Garantía del 100% de que ninguna pieza defectuosa será aceptada (Riesgo del consumidor = 0).
+                </div>
+                <div class="callout warning" style="font-size: 0.8rem; padding: 0.5rem;">
+                  <strong>Desventaja:</strong> Puede rechazar piezas buenas que estén en los límites extremos.
+                </div>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Práctica Optimista (Comercial)</span>
+                  <span class="metro-badge warn">Bajo Riesgo</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                  La tolerancia del gage se sitúa <strong>fuera</strong> de la tolerancia del producto.
+                </p>
+                <div class="callout success" style="font-size: 0.8rem; padding: 0.5rem;">
+                  <strong>Ventaja:</strong> Ninguna pieza conforme es rechazada accidentalmente en la planta.
+                </div>
+                <div class="callout danger" style="font-size: 0.8rem; padding: 0.5rem;">
+                  <strong>Desventaja:</strong> Existe probabilidad de aceptar piezas ligeramente fuera de especificación.
+                </div>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Práctica Dividida (Shared)</span>
+                  <span class="metro-badge asme">Intermedia</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                  La tolerancia del gage se divide simétricamente (50% adentro y 50% afuera del límite de la pieza).
+                </p>
+                <div class="callout" style="font-size: 0.8rem; padding: 0.5rem;">
+                  Distribución equilibrada del riesgo entre fabricante y cliente. Requiere acuerdo explícito formal.
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              Regla de Oro de Metrología (Gagemaker's Rule): Tolerancia del Gage &le; 10% de la Tolerancia de la Pieza (10:1 Ratio)
+            </div>
+          </article>
+
+          <!-- SLIDE 5: CLASES DE FABRICACIÓN ASME B89.1.5 -->
+          <article class="slide" id="slide-5" data-speaker-notes="La norma ASME B89.1.5 es la tabla maestra utilizada por los fabricantes de gages cilíndricos. Define las clases XX, X, Y, Z y ZZ. Observen cómo para diámetros hasta 0.825 pulgadas, la clase XX tiene una tolerancia de solo 20 micro-pulgadas (0.5 micrómetros). Además, la norma exige que la redondez y conicidad no excedan el 50% de la tolerancia total de la clase.">
+            <span class="slide-header-badge">Módulo 4 &middot; Fabricación y Clases de Precisión</span>
+            <h2 class="slide-title">Clases de Tolerancia de Gages (ASME B89.1.5)</h2>
+            <p class="slide-subtitle">Especificaciones canónicas para calibradores cilíndricos plug, anillos y discos patrón</p>
+
+            <div class="grid-2">
+              <div>
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                  <button id="btnTableMm" class="ctrl-btn active" onclick="renderTablePreview('mm')">Unidades Métricas (µm)</button>
+                  <button id="btnTableIn" class="ctrl-btn" onclick="renderTablePreview('in')">Pulgadas (µin)</button>
+                </div>
+
+                <div class="table-wrapper" style="max-height: 280px; overflow-y: auto;">
+                  <table class="metro-table">
+                    <thead>
+                      <tr>
+                        <th>Rango Diámetro</th>
+                        <th>Clase XX</th>
+                        <th>Clase X</th>
+                        <th>Clase Y</th>
+                        <th>Clase Z</th>
+                        <th>Clase ZZ</th>
+                      </tr>
+                    </thead>
+                    <tbody id="asmeTableBody">
+                      <!-- Rendered by JavaScript -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Criterio de Selección de Clase</span>
+                  <span class="metro-badge asme">Criterio AMG</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem; color: var(--text-secondary);">
+                  <div>
+                    <strong style="color: var(--brand-cyan);">Clase XX:</strong> Patrones maestros de calibración para CMM, laboratorios acreditados ISO/IEC 17025.
+                  </div>
+                  <div>
+                    <strong style="color: var(--color-go);">Clase X:</strong> Inspección final de alta precisión (aeroespacial, herramentales de inyección).
+                  </div>
+                  <div>
+                    <strong style="color: var(--brand-amber);">Clase Y:</strong> Operaciones de mecanizado de precisión y gages de trabajo estándar.
+                  </div>
+                  <div>
+                    <strong style="color: var(--text-primary);">Clase Z / ZZ:</strong> Comprobaciones de desbaste en piso de taller y piezas con tolerancias abiertas (>0.1 mm).
+                  </div>
+                </div>
+
+                <div class="callout warning" style="margin-top: 1rem; font-size: 0.8rem; padding: 0.5rem 0.75rem;">
+                  <strong>Requisito Geométrico ASME:</strong> Los errores de forma (falta de redondez y conicidad) están restringidos a un máximo del <strong>50%</strong> de la tolerancia diametral de la clase asignada.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 6: MARGEN DE DESGASTE (WEAR ALLOWANCE) -->
+          <article class="slide" id="slide-6" data-speaker-notes="Un gage PASA entra repetidamente en cada pieza producida. La fricción remueve material con el tiempo. Si no incluimos un margen de desgaste (Wear Allowance), el gage nuevo quedaría en el límite y con pocos días de uso quedaría inservible. El extremo NO-GO casi nunca entra, por lo que NO lleva margen de desgaste.">
+            <span class="slide-header-badge">Módulo 5 &middot; Vida Útil y Desgaste</span>
+            <h2 class="slide-title">Margen de Desgaste (Wear Allowance)</h2>
+            <p class="slide-subtitle">Ingeniería del ciclo de vida para calibradores funcionales de alta rotación</p>
+
+            <div class="grid-3">
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Extremo PASA (GO)</span>
+                  <span class="metro-badge go">Fricción Activa</span>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                  Experimenta roce mecánico en el 100% de las piezas inspeccionadas. Sufre desgaste abrasivo progresivo que reduce su diámetro exterior en tapones (o incrementa su diámetro interior en anillos).
+                </p>
+                <div class="callout success" style="margin-top: 0.75rem; font-size: 0.8rem; padding: 0.5rem;">
+                  <strong>Diseño:</strong> Se adiciona intencionalmente un margen de desgaste (+W) en exceso de metal para prolongar su vida útil.
+                </div>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Extremo NO PASA (NO-GO)</span>
+                  <span class="metro-badge nogo">Sin Contacto</span>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                  En un proceso bajo control estadístico, el calibrador NO PASA solo hace contacto en el chaflán y es detenido antes de ingresar. Prácticamente no experimenta desgaste abrasivo.
+                </p>
+                <div class="callout" style="margin-top: 0.75rem; font-size: 0.8rem; padding: 0.5rem;">
+                  <strong>Regla ASME:</strong> NO se aplica margen de desgaste al extremo NO-GO.
+                </div>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Criterio de Retiro / Baja</span>
+                  <span class="metro-badge warn">Calibration Drift</span>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                  El calibrador tapón GO es dado de baja o reacondicionado cuando el desgaste supera el margen +W y cae por debajo del límite nominal MMC original de la pieza inspeccionada.
+                </p>
+                <div class="callout danger" style="margin-top: 0.75rem; font-size: 0.8rem; padding: 0.5rem;">
+                  Un gage GO desgastado aceptará agujeros por debajo del mínimo requerido.
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              Cálculo del Margen de Desgaste Recomendado: W = 5% a 10% de la Tolerancia de la Pieza (o 1 Clase de Tolerancia ASME)
+            </div>
+          </article>
+
+          <!-- SLIDE 7: DIAGRAMA VISUAL DE ZONAS DE TOLERANCIA -->
+          <article class="slide" id="slide-7" data-speaker-notes="En esta diapositiva mostramos visualmente cómo se ubica cada elemento en la recta dimensional para un calibrador tapón de agujero. Vean cómo la tolerancia de la pieza alberga dentro de sí la tolerancia del gage y el margen de desgaste, protegiendo 100% al cliente final.">
+            <span class="slide-header-badge">Módulo 6 &middot; Visualización Geométrica</span>
+            <h2 class="slide-title">Diagrama de Distribución de Tolerancias en Plug Gage</h2>
+            <p class="slide-subtitle">Distribución en la recta dimensional bajo Práctica Absoluta ASME Y14.43</p>
+
+            <div class="diagram-container">
+              <svg id="slideGageSvg" class="diagram-svg" viewBox="0 0 800 240"></svg>
+            </div>
+
+            <div class="grid-3" style="margin-top: 1rem;">
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong style="color: var(--brand-part-tol);">■ Tolerancia de Pieza:</strong> Rango permitido en el plano de ingeniería (LSL a USL).
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong style="color: var(--color-wear);">■ Margen de Desgaste (W):</strong> Reserva inicial de material en extremo GO para amortiguar la abrasión.
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong style="color: var(--color-go);">■ Tolerancia GO</strong> / <strong style="color: var(--color-nogo);">■ NO-GO:</strong> Dispersión de manufactura del fabricante del gage (AMG).
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 8: REGLAS DE DECISIÓN E INCERTIDUMBRE (ASME B89.7.3.1) -->
+          <article class="slide" id="slide-8" data-speaker-notes="Entramos ahora al estándar ASME B89.7.3.1, una de las normas más potentes y peor entendidas. La metrología moderna no existe sin incertidumbre de medición. Cuando medimos una pieza o un gage, el valor medido tiene una campana de incertidumbre U con 95% de confianza. Si el ratio TUR es menor a 4 a 1, la norma exige aplicar guardbanding.">
+            <span class="slide-header-badge">Módulo 7 &middot; Incertidumbre y Reglas de Decisión</span>
+            <h2 class="slide-title">Reglas de Decisión y Guardbanding (ASME B89.7.3.1)</h2>
+            <p class="slide-subtitle">Evaluación de la conformidad considerando la Incertidumbre Expandida de Medición (\(U_{95}\))</p>
+
+            <div class="grid-2">
+              <div class="metro-card highlight">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Test Uncertainty Ratio (TUR)</span>
+                  <span class="metro-badge asme">Métrica Clave</span>
+                </div>
+                <div class="formula-box" style="font-size: 1.1rem; margin: 1rem 0;">
+                  TUR = \frac{USL - LSL}{2 \cdot U_{95}}
+                </div>
+                <ul style="font-size: 0.875rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+                  <li><strong>TUR &ge; 4:1 (Ideal ASME):</strong> La incertidumbre representa menos del 12.5% de la tolerancia. Se puede aplicar Aceptación Simple con riesgo compartido bajo (&le; 2%).</li>
+                  <li><strong>TUR &lt; 4:1 (Zona de Precaución):</strong> La incertidumbre es significativa. Se requiere Guardbanding para proteger al consumidor de falsas aceptaciones.</li>
+                  <li><strong>TUR &lt; 2:1 (Zona Crítica):</strong> El sistema de medición no es apto para discriminar piezas conforme a especificación.</li>
+                </ul>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">¿Qué es el Guardbanding (\(g\))?</span>
+                  <span class="metro-badge warn">Margen de Resguardo</span>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                  Es una reducción deliberada de los límites de aceptación para garantizar que los valores verdaderos de la pieza no escapen de la especificación debido al ruido de medición.
+                </p>
+                <div class="formula-box">
+                  Límite Superior Seguro = USL - g <br>
+                  Límite Inferior Seguro = LSL + g <br>
+                  (donde g = 1.0 &times; U_{95} según ASME B89.7.3.1)
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
+                  Protege al cliente final (Riesgo del Consumidor &beta;) trasladando la incertidumbre al margen del fabricante.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 9: GRÁFICO DE ZONAS ASME B89.7.3.1 -->
+          <article class="slide" id="slide-9" data-speaker-notes="Miren este gráfico de la norma ASME B89.7.3.1. Entre la zona de aceptación estricta y la zona de rechazo se encuentra la zona de ambigüedad o duda, igual al guardband. En un contrato de calidad, si no se especifica la regla de decisión por escrito, surgen disputas legales entre proveedor y cliente cuando una pieza cae en esta franja.">
+            <span class="slide-header-badge">Módulo 8 &middot; Zonas de Conformidad</span>
+            <h2 class="slide-title">Zonas de Decisión: Aceptación, Guardband y Rechazo</h2>
+            <p class="slide-subtitle">Distribución operativa de los límites según ASME B89.7.3.1</p>
+
+            <div class="diagram-container">
+              <svg id="slideGuardbandSvg" class="diagram-svg" viewBox="0 0 800 220">
+                <!-- Se actualiza con el mismo motor de render -->
+              </svg>
+            </div>
+
+            <div class="grid-3" style="margin-top: 1rem;">
+              <div class="metro-card" style="padding: 1rem;">
+                <h4 style="color: var(--color-go); font-size: 0.95rem;">Zona de Aceptación Segura</h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Medición dentro de \([LSL+g, USL-g]\). Certeza estadística del 95% de conformidad real.</p>
+              </div>
+
+              <div class="metro-card" style="padding: 1rem;">
+                <h4 style="color: var(--brand-guardband); font-size: 0.95rem;">Zona de Indeterminación</h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Medición entre el límite y \(g\). No se puede garantizar conformidad sin riesgo compartido.</p>
+              </div>
+
+              <div class="metro-card" style="padding: 1rem;">
+                <h4 style="color: var(--color-nogo); font-size: 0.95rem;">Zona de Rechazo Claro</h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Medición fuera de los límites de especificación con certeza estadística demostrada.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 10: EFECTOS TÉRMICOS (ASME B89.6.2) -->
+          <article class="slide" id="slide-10" data-speaker-notes="El error térmico es el enemigo silencioso número uno de la metrología. ASME B89.6.2 define 20 grados Celsius como la temperatura internacional. Si el gage de acero y la pieza de aluminio se miden en el piso de taller a 26 grados, la diferencia en los coeficientes de dilatación generará un error diferencial que puede superar fácilmente 10 micrómetros, arruinando la validez de la inspección.">
+            <span class="slide-header-badge">Módulo 9 &middot; Control Ambiental y Dilatación Térmica</span>
+            <h2 class="slide-title">Influencia Térmica y ASME B89.6.2 (20°C / 68°F)</h2>
+            <p class="slide-subtitle">El impacto crítico de los gradientes de temperatura y la expansión diferencial</p>
+
+            <div class="grid-2">
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Temperatura de Referencia</span>
+                  <span class="metro-badge asme">20.0 °C Estándar</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                  Todas las dimensiones expresadas en planos de ingeniería bajo normas ASME aplican <strong>exclusivamente a 20 °C (68 °F)</strong>.
+                </p>
+                <div class="formula-box" style="margin: 1rem 0;">
+                  \Delta L = L_{nominal} \cdot \left[ \alpha_{pieza}(T_{pieza}-20) - \alpha_{gage}(T_{gage}-20) \right]
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                  Donde \(\alpha\) es el Coeficiente de Dilatación Térmica (CTE) propio de cada material.
+                </p>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Disparidad de Coeficientes CTE</span>
+                  <span class="metro-badge warn">10^{-6} / °C</span>
+                </div>
+                <table class="metro-table" style="font-size: 0.8rem;">
+                  <thead>
+                    <tr><th>Material</th><th>CTE (\(\alpha\))</th><th>Uso Típico</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Acero para Herramientas</td><td>11.5 µm/m·°C</td><td>Gages estándar</td></tr>
+                    <tr><td>Carburo de Tungsteno</td><td>5.0 µm/m·°C</td><td>Gages de ultra-durabilidad</td></tr>
+                    <tr><td>Cerámica Zirconia</td><td>9.2 µm/m·°C</td><td>Bloques patrón / gages libres de corrosión</td></tr>
+                    <tr style="color: var(--brand-amber);"><td>Aluminio (6061)</td><td>23.0 µm/m·°C</td><td>Piezas aeroespaciales</td></tr>
+                  </tbody>
+                </table>
+                <div class="callout danger" style="margin-top: 0.75rem; font-size: 0.8rem; padding: 0.5rem;">
+                  A 26 °C, una pieza de aluminio de 100 mm se dilata <strong>7 µm más</strong> que un gage de acero, falseando completamente el pase funcional.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 11: GAGES DE ROSCA (ASME B1.2) -->
+          <article class="slide" id="slide-11" data-speaker-notes="Para calibradores roscados, la norma ASME B1.2 gobierna las roscas Unified Inch y ASME B1.16M las métricas. El parámetro crítico no es el diámetro exterior, sino el diámetro de paso (Pitch Diameter) y el truncamiento de crestas para garantizar que el calibrador no se atasque en el fondo del filete.">
+            <span class="slide-header-badge">Módulo 10 &middot; Gages de Rosca ASME B1.2</span>
+            <h2 class="slide-title">Calibradores Roscados: Macho y Hembra (ASME B1.2)</h2>
+            <p class="slide-subtitle">Control funcional del Diámetro de Paso (Pitch Diameter) y Truncamiento</p>
+
+            <div class="grid-2">
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Tapones Roscados (Thread Plugs)</span>
+                  <span class="metro-badge go">Inspección Interna</span>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                  Comprueban roscas hembra maquinadas (tuercas, barrenos roscados):
+                </p>
+                <ul style="font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                  <li><strong>Extremo GO Roscado:</strong> Perfil completo que verifica diámetro de paso mínimo, ángulo de flanco y paso helicoidal en toda la longitud acoplada.</li>
+                  <li><strong>Extremo NO-GO Roscado:</strong> Pocos hilos con truncamiento agresivo de cresta, verificando únicamente el límite de paso máximo.</li>
+                  <li><strong>Criterio de Aceptación:</strong> El extremo NO-GO no debe entrar más de 3 vueltas completas en la rosca de la pieza.</li>
+                </ul>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Anillos Roscados (Thread Rings)</span>
+                  <span class="metro-badge asme">Inspección Externa</span>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                  Comprueban espárragos y tornillos maquinados:
+                </p>
+                <ul style="font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                  <li><strong>Ajuste y Calibración:</strong> Los anillos roscados ajustables se calibra con tapones patrón maestros roscados (Setting Plugs).</li>
+                  <li><strong>Inspección de Truncamiento:</strong> Evita que un radio de raíz imperfecto interfiera con la inspección del flanco de contacto funcional.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="callout warning" style="margin-top: 1.25rem;">
+              <div class="callout-title"><span>⚠️</span> Error Frecuente en Planta</div>
+              <p style="font-size: 0.85rem;">Forzar un calibrador roscado con llave o maneral daña permanentemente los filetes del gage y deforma la pieza, invalidando la calibración y generando rechazos falsos.</p>
+            </div>
+          </article>
+
+          <!-- SLIDE 12: GESTIÓN DE CALIBRACIÓN EN ALL MEASURING GAGE -->
+          <article class="slide" id="slide-12" data-speaker-notes="En All Measuring Gage brindamos el soporte completo: desde el diseño y fabricación de gages clase XX y X, hasta el servicio de calibración periódica con trazabilidad acreditada hacia CENAM y NIST. Conocer la frecuencia adecuada de recalibración según el número de inserciones es la mejor inversión para evitar no conformidades en auditorías IATF 16949 o AS9100.">
+            <span class="slide-header-badge">Módulo 11 &middot; Sistema de Gestión y Trazabilidad</span>
+            <h2 class="slide-title">Ciclo de Vida y Calibración en All Measuring Gage</h2>
+            <p class="slide-subtitle">Aseguramiento de la calidad metrológica continua y trazabilidad acreditada</p>
+
+            <div class="grid-3">
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Trazabilidad Metrológica</span>
+                  <span class="metro-badge asme">CENAM / NIST</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                  Cadena ininterrumpida de comparaciones documentadas con incertidumbre declarada, trazable a patrones primarios nacionales e internacionales.
+                </p>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Intervalos de Calibración</span>
+                  <span class="metro-badge go">Dinámicos</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                  Determinación de intervalos basados en frecuencia de inserción, material del gage (acero vs carburo) y tasa histórica de desgaste, no solo en fechas fijas en el calendario.
+                </p>
+              </div>
+
+              <div class="metro-card">
+                <div class="metro-card-header">
+                  <span class="metro-card-title">Dictamen y Reclasificación</span>
+                  <span class="metro-badge warn">AMG Protocols</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                  Evaluación de desgaste del extremo GO. Si ha perdido su clase X original, puede ser reclasificado a clase Y/Z para operaciones menos críticas o rectificado.
+                </p>
+              </div>
+            </div>
+
+            <div class="metro-card highlight" style="margin-top: 1.5rem;">
+              <h3 style="color: var(--brand-cyan); font-size: 1.1rem; margin-bottom: 0.5rem;">Compromiso Técnico de All Measuring Gage</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                Nuestros certificados de calibración incluyen el cálculo explícito de la incertidumbre expandida \(U_{95}\) y el análisis de cumplimiento con las reglas de decisión de ASME B89.7.3.1, brindando respaldo legal y técnico a sus auditorías de clientes.
+              </p>
+            </div>
+          </article>
+
+          <!-- SLIDE 13: CONCLUSIONES Y MEJORES PRÁCTICAS -->
+          <article class="slide" id="slide-13" data-speaker-notes="Para cerrar esta capacitación técnica, resumamos los 5 mandamientos que todo ingeniero e inspector de calidad debe aplicar en su día a día. Dejo abiertos los micrófonos para sus dudas y pasaremos a explorar las calculadoras interactivas y el quiz de evaluación.">
+            <span class="slide-header-badge">Conclusiones &middot; Resumen Técnico</span>
+            <h2 class="slide-title">Las 5 Reglas de Oro en Metrología de Gages</h2>
+            <p class="slide-subtitle">Buenas prácticas de ingeniería para inspectores, metrólogos y diseñadores</p>
+
+            <div class="grid-2">
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="metro-card" style="border-left: 4px solid var(--brand-cyan);">
+                  <strong style="color: var(--text-primary); font-size: 0.95rem;">1. Aplica la Regla 10:1 (Gagemaker's Rule):</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">La tolerancia del gage debe ser \(\le 10\%\) de la tolerancia de la pieza a inspeccionar (ASME B89.1.5).</p>
+                </div>
+
+                <div class="metro-card" style="border-left: 4px solid var(--color-go);">
+                  <strong style="color: var(--text-primary); font-size: 0.95rem;">2. Respeta el Principio de Taylor (ASME Y14.43):</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">El gage GO debe inspeccionar tamaño y forma simultáneamente en MMC; el gage NO-GO inspecciona solo tamaño local en LMC.</p>
+                </div>
+
+                <div class="metro-card" style="border-left: 4px solid var(--color-wear);">
+                  <strong style="color: var(--text-primary); font-size: 0.95rem;">3. Incluye Margen de Desgaste (+W) solo en GO:</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">Protege la inversión del gage para que la abrasión no lo vuelva inútil a los pocos días de producción.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="metro-card" style="border-left: 4px solid var(--brand-guardband);">
+                  <strong style="color: var(--text-primary); font-size: 0.95rem;">4. Implementa Guardbanding si TUR &lt; 4:1 (ASME B89.7.3.1):</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">Evita disputas contractuales reduciendo los límites de aceptación en \(g = 1.0 \times U\) para proteger al cliente.</p>
+                </div>
+
+                <div class="metro-card" style="border-left: 4px solid var(--brand-amber);">
+                  <strong style="color: var(--text-primary); font-size: 0.95rem;">5. Controla la Temperatura a 20 °C (ASME B89.6.2):</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">La dilatación térmica diferencial entre gage y pieza puede consumir más de la mitad de la tolerancia disponible.</p>
+                </div>
+
+                <div class="metro-card highlight" style="text-align: center; padding: 1.25rem;">
+                  <h4 style="color: var(--brand-cyan); margin-bottom: 0.25rem;">Contacto de Capacitación &amp; Asesoría</h4>
+                  <p style="font-weight: 700; color: var(--text-primary);">Ing. Patricia Flores Reyes</p>
+                  <p style="font-size: 0.85rem; color: var(--brand-cyan);">All Measuring Gage &middot; Soporte Técnico</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- BARRA INFERIOR DE NAVEGACIÓN Y PRESENTADOR -->
+        <footer class="presentation-bar" id="presentationBar">
+          <div class="slide-controls">
+            <button id="prevSlideBtn" class="ctrl-btn" title="Diapositiva Anterior (←)">
+              <span>◀</span> <span>Anterior</span>
+            </button>
+            <span id="slideIndicator" class="slide-indicator">1 / 13</span>
+            <button id="nextSlideBtn" class="ctrl-btn" title="Diapositiva Siguiente (→)">
+              <span>Siguiente</span> <span>▶</span>
+            </button>
+          </div>
+
+          <div class="progress-container">
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill" id="progressBarFill"></div>
+            </div>
+          </div>
+
+          <div class="slide-controls">
+            <!-- Temporizador de Presentación -->
+            <div style="display: flex; align-items: center; gap: 0.4rem; background: var(--bg-tertiary); padding: 0.25rem 0.6rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">⏱️</span>
+              <span id="timerDisplay" style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--brand-cyan);">00:00</span>
+              <button id="timerToggleBtn" class="ctrl-btn" style="padding: 0.15rem 0.45rem; font-size: 0.75rem;" title="Iniciar / Pausar">▶</button>
+              <button id="timerResetBtn" class="ctrl-btn" style="padding: 0.15rem 0.45rem; font-size: 0.75rem;" title="Reiniciar">↺</button>
+            </div>
+
+            <!-- Botón de Notas del Orador -->
+            <button id="toggleNotesBtn" class="ctrl-btn" title="Notas para Ing. Patricia Flores (Tecla N)">
+              <span>📝</span> <span>Notas</span>
+            </button>
+          </div>
+        </footer>
+
+        <!-- PANEL DESPLEGABLE DE NOTAS DEL ORADOR -->
+        <aside id="speakerNotesPanel" class="speaker-notes-panel">
+          <div class="speaker-notes-header">
+            <span class="speaker-notes-title">🎙️ Notas para: Ing. Patricia Flores</span>
+            <button id="closeNotesBtn" style="background:transparent; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem;">✕</button>
+          </div>
+          <div id="speakerNotesContent" style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">
+            <!-- Notas dinámicas -->
+          </div>
+        </aside>
+
+      </section>
+
+      <!-- ====================================================================
+           VISTA 2: MODO MANUAL TÉCNICO (DOCUMENT VIEW COMPLETO)
+           ==================================================================== -->
+      <section id="documentView" class="document-view">
+        <div class="document-layout">
+
+          <!-- Sidebar Tabla de Contenido -->
+          <aside class="document-sidebar">
+            <div class="toc-title">Índice del Manual Técnico</div>
+            <ul class="toc-list">
+              <li class="toc-item"><a href="#doc-introduccion" class="toc-link">1. Introducción y Marco ASME</a></li>
+              <li class="toc-item"><a href="#doc-taylor" class="toc-link">2. Principio de Taylor (ASME Y14.43)</a></li>
+              <li class="toc-item"><a href="#doc-politicas" class="toc-link">3. Asignación de Tolerancias</a></li>
+              <li class="toc-item"><a href="#doc-b89-1-5" class="toc-link">4. Clases ASME B89.1.5 (XX a ZZ)</a></li>
+              <li class="toc-item"><a href="#doc-desgaste" class="toc-link">5. Margen de Desgaste (Wear)</a></li>
+              <li class="toc-item"><a href="#doc-decision" class="toc-link">6. Reglas de Decisión (ASME B89.7.3.1)</a></li>
+              <li class="toc-item"><a href="#doc-termico" class="toc-link">7. Efectos Térmicos (ASME B89.6.2)</a></li>
+              <li class="toc-item"><a href="#doc-roscas" class="toc-link">8. Gages de Rosca (ASME B1.2)</a></li>
+              <li class="toc-item"><a href="#doc-gestion" class="toc-link">9. Gestión en All Measuring Gage</a></li>
+            </ul>
+          </aside>
+
+          <!-- Cuerpo Técnico Completo -->
+          <div class="document-body">
+
+            <header style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
+              <span class="slide-header-badge">Manual Técnico de Capacitación Especializada</span>
+              <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--text-primary); margin-top: 0.5rem; line-height: 1.2;">
+                Tolerancias Metrológicas para Gages: Fundamentos y Aplicación de Normas ASME
+              </h1>
+              <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 0.5rem;">
+                Documento de consulta técnica compilado por la <strong>Ing. Patricia Flores Reyes</strong> para el equipo de metrología, ingeniería y calidad de <strong>All Measuring Gage</strong>.
+              </p>
+            </header>
+
+            <!-- Sección 1 -->
+            <section id="doc-introduccion">
+              <h2 class="document-section-title">1. Introducción y Marco Normativo ASME</h2>
+              <p>
+                En el aseguramiento metrológico de líneas de manufactura seriada, los calibradores dimensionales de forma fija (comúnmente denominados <em>gages</em> o <em>calibradores límite pasa/no-pasa</em>) representan el estándar operativo fundamental para la verificación rápida del 100% de la producción. A diferencia de las máquinas de medición por coordenadas (CMM) que muestrean puntos matemáticos discretos, los gages evalúan la frontera funcional tridimensional real de acoplamiento de las piezas mecánicas.
+              </p>
+              <p style="margin-top: 1rem;">
+                La organización ASME (American Society of Mechanical Engineers) ha establecido una estructura normativa complementaria y rigurosa para garantizar que los gages se diseñen, fabriquen, calibren y utilicen con base en principios físicos comprobables:
+              </p>
+              <div class="grid-2" style="margin-top: 1rem;">
+                <div class="metro-card">
+                  <h4 style="color: var(--brand-cyan);">ASME B89.1.5</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">Define la medición de diámetros exteriores lisos para su uso como discos patrón o calibradores cilíndricos plug, estableciendo formalmente las clases de tolerancia de los fabricantes de calibradores (Classes XX, X, Y, Z, ZZ).</p>
+                </div>
+                <div class="metro-card">
+                  <h4 style="color: var(--brand-cyan);">ASME Y14.43</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">Norma madre para el dimensionamiento y tolerado de gages funcionales y dispositivos de fijación (Fixtures), codificando las políticas de asignación de tolerancias (Absoluta, Optimista y Dividida).</p>
+                </div>
+                <div class="metro-card">
+                  <h4 style="color: var(--brand-cyan);">ASME B89.7.3.1</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">Pautas metrológicas para reglas de decisión, incorporando el impacto de la incertidumbre expandida de medición (\(U_{95}\)), el ratio TUR y el uso de bandas de seguridad (Guardbanding).</p>
+                </div>
+                <div class="metro-card">
+                  <h4 style="color: var(--brand-cyan);">ASME B89.6.2</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">Ambiente térmico y de humedad para medición dimensional, fijando los 20 °C (68 °F) como temperatura de referencia internacional y las correcciones diferenciales.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Sección 2 -->
+            <section id="doc-taylor">
+              <h2 class="document-section-title">2. El Principio de Taylor y Fronteras Funcionales</h2>
+              <p>
+                Formulado por William Taylor en 1905 y adoptado en ASME Y14.43 y la Regla #1 de ASME Y14.5, este principio establece cómo debe comportarse un sistema de calibración pasa/no-pasa:
+              </p>
+              <div class="callout" style="margin: 1.25rem 0;">
+                <p><strong>Principio del Calibrador PASA (GO):</strong> El calibrador GO debe verificar simultáneamente todas las dimensiones y características geométricas asociadas en la Condición de Máxima Materia (MMC) a lo largo de la longitud completa de acoplamiento funcional.</p>
+                <p style="margin-top: 0.5rem;"><strong>Principio del Calibrador NO PASA (NO-GO):</strong> El calibrador NO-GO debe verificar elementos dimensionales individuales y locales en la Condición de Mínima Materia (LMC) con contacto puntual, asegurando que ningún diámetro o espesor local quede por debajo/arriba del límite permitido.</p>
+              </div>
+              <p>
+                Por ejemplo, si un agujero maquinado tiene curvatura o flexión (error de rectitud), un micrómetro de dos contactos podría registrar que el diámetro local cumple la especificación, pero un perno de ensamble real no entrará. El calibrador cilíndrico GO detectará la interferencia y rechazará la pieza de inmediato, salvaguardando el ensamble final.
+              </p>
+            </section>
+
+            <!-- Sección 3 -->
+            <section id="doc-politicas">
+              <h2 class="document-section-title">3. Políticas de Asignación de Tolerancias (ASME Y14.43)</h2>
+              <p>
+                La tolerancia de manufactura de un gage no puede ser cero; el taller del fabricante de herramientas (Gagemaker) también tiene variabilidad inherente. ASME Y14.43 contempla tres filosofías de asignación:
+              </p>
+              <ul style="margin: 1rem 0 1rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-secondary);">
+                <li>
+                  <strong style="color: var(--text-primary);">Práctica Absoluta (Pesimista):</strong> La tolerancia completa de fabricación del gage y el margen de desgaste se sitúan <em>dentro</em> de la zona de tolerancia del producto. Esto asegura un 100% de piezas buenas entregadas al cliente final (Riesgo del consumidor = 0). Esta es la práctica estándar implementada en All Measuring Gage para componentes aeroespaciales, nucleares y médicos.
+                </li>
+                <li>
+                  <strong style="color: var(--text-primary);">Práctica Optimista (Comercial):</strong> La tolerancia del gage se sitúa <em>fuera</em> de la zona de tolerancia de la pieza. Esto maximiza el rendimiento interno de manufactura al no descartar piezas conformes marginales, pero introduce el riesgo de que piezas fuera de plano sean aceptadas.
+                </li>
+                <li>
+                  <strong style="color: var(--text-primary);">Práctica Dividida (Straddle):</strong> La tolerancia del gage se distribuye simétricamente sobre el límite de especificación de la pieza.
+                </li>
+              </ul>
+              <div class="formula-box">
+                Regla Canónica 10:1 (10% Rule): \text{Tolerancia total de fabricación del gage} \le 0.10 \times \text{Tolerancia de la característica de la pieza}
+              </div>
+            </section>
+
+            <!-- Sección 4 -->
+            <section id="doc-b89-1-5">
+              <h2 class="document-section-title">4. Clases de Tolerancia ASME B89.1.5 (XX a ZZ)</h2>
+              <p>
+                La norma ASME B89.1.5 clasifica las tolerancias para calibradores cilíndricos y discos maestros en pasos escalonados según el diámetro nominal. La siguiente tabla resume los valores canónicos:
+              </p>
+              <div class="table-wrapper">
+                <table class="metro-table">
+                  <thead>
+                    <tr>
+                      <th>Rango Nominal (Pulgadas)</th>
+                      <th>Rango Nominal (Métrico)</th>
+                      <th>Clase XX</th>
+                      <th>Clase X</th>
+                      <th>Clase Y</th>
+                      <th>Clase Z</th>
+                      <th>Clase ZZ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>0.010 a 0.825 in</td><td>0.25 a 20.95 mm</td><td>20 µin (0.5 µm)</td><td>40 µin (1.0 µm)</td><td>70 µin (1.8 µm)</td><td>100 µin (2.5 µm)</td><td>200 µin (5.0 µm)</td></tr>
+                    <tr><td>0.825 a 1.510 in</td><td>20.95 a 38.35 mm</td><td>30 µin (0.8 µm)</td><td>60 µin (1.5 µm)</td><td>90 µin (2.3 µm)</td><td>120 µin (3.0 µm)</td><td>240 µin (6.0 µm)</td></tr>
+                    <tr><td>1.510 a 2.510 in</td><td>38.35 a 63.75 mm</td><td>40 µin (1.0 µm)</td><td>80 µin (2.0 µm)</td><td>120 µin (3.0 µm)</td><td>160 µin (4.0 µm)</td><td>320 µin (8.0 µm)</td></tr>
+                    <tr><td>2.510 a 4.510 in</td><td>63.75 a 114.55 mm</td><td>50 µin (1.3 µm)</td><td>100 µin (2.5 µm)</td><td>150 µin (3.8 µm)</td><td>200 µin (5.0 µm)</td><td>400 µin (10.0 µm)</td></tr>
+                    <tr><td>4.510 a 6.510 in</td><td>114.55 a 165.35 mm</td><td>65 µin (1.7 µm)</td><td>130 µin (3.3 µm)</td><td>190 µin (4.8 µm)</td><td>250 µin (6.4 µm)</td><td>500 µin (12.7 µm)</td></tr>
+                    <tr><td>6.510 a 9.010 in</td><td>165.35 a 228.85 mm</td><td>80 µin (2.0 µm)</td><td>160 µin (4.1 µm)</td><td>240 µin (6.1 µm)</td><td>320 µin (8.1 µm)</td><td>640 µin (16.3 µm)</td></tr>
+                    <tr><td>9.010 a 12.010 in</td><td>228.85 a 305.05 mm</td><td>100 µin (2.5 µm)</td><td>200 µin (5.1 µm)</td><td>300 µin (7.6 µm)</td><td>400 µin (10.2 µm)</td><td>800 µin (20.3 µm)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="callout warning">
+                <strong>Control de Forma (Form Errors):</strong> Conforme a ASME B89.1.5 cláusula 4.3, la falta de redondez (Out-of-roundness) y la conicidad (Taper) no deben superar el <strong>50%</strong> del valor de la tolerancia total de la clase seleccionada.
+              </div>
+            </section>
+
+            <!-- Sección 5 -->
+            <section id="doc-desgaste">
+              <h2 class="document-section-title">5. Margen de Desgaste (Wear Allowance)</h2>
+              <p>
+                Durante las operaciones de inspección, el extremo GO sufre roce continuo. En un calibrador tapón macho (Plug Gage), el diámetro exterior disminuye con el tiempo; en un anillo hembra (Ring Gage), el agujero interior se ensancha. Para prevenir que un gage nuevo quede fuera de especificación en pocos ciclos, se aplica una provisión de metal adicional denominada <strong>Margen de Desgaste (+W)</strong>:
+              </p>
+              <ul style="margin: 0.75rem 0 0.75rem 1.5rem; color: var(--text-secondary);">
+                <li>Se aplica típicamente un valor entre el <strong>5% y el 10%</strong> de la tolerancia de la pieza a inspeccionar, o el equivalente a una clase de tolerancia superior.</li>
+                <li>El extremo NO-GO <strong>nunca</strong> lleva margen de desgaste, ya que en condiciones normales no debe ingresar a la pieza.</li>
+                <li><strong>Criterio de Reacondicionamiento / Descarte:</strong> Cuando el extremo GO se desgasta por debajo de la cota nominal original MMC de la pieza, el calibrador queda descalificado para uso operativo.</li>
+              </ul>
+            </section>
+
+            <!-- Sección 6 -->
+            <section id="doc-decision">
+              <h2 class="document-section-title">6. Reglas de Decisión y Guardbanding (ASME B89.7.3.1)</h2>
+              <p>
+                La norma ASME B89.7.3.1 aborda el dilema fundamental de la metrología: ningún proceso de medición arroja un valor infinitamente exacto; todo resultado está acompañado de una incertidumbre expandida \(U_{95}\) con factor de cobertura \(k=2\).
+              </p>
+              <p style="margin-top: 0.75rem;">
+                Para evaluar si un sistema de calibración es adecuado, se define el <strong>Test Uncertainty Ratio (TUR)</strong>:
+              </p>
+              <div class="formula-box">
+                TUR = \frac{USL - LSL}{2 \cdot U_{95}}
+              </div>
+              <p style="margin-top: 0.75rem;">
+                Si el TUR es menor a 4:1, la zona de ambigüedad en los extremos de la tolerancia es inadmisible bajo criterios de cero defectos. En tal situación, ASME B89.7.3.1 establece el uso de <strong>Guardbanding (Aceptación Restringida)</strong>:
+              </p>
+              <div class="formula-box">
+                g = 1.0 \times U_{95} \implies \text{Zona de Aceptación} = [LSL + g, \ USL - g]
+              </div>
+              <p style="margin-top: 0.75rem;">
+                El uso de guardbanding comprime la banda de aceptación interna, garantizando estadísticamente que el Riesgo del Consumidor (\(\beta\), probabilidad de recibir una pieza no conforme) sea inferior al 2%.
+              </p>
+            </section>
+
+            <!-- Sección 7 -->
+            <section id="doc-termico">
+              <h2 class="document-section-title">7. Control Ambiental y Dilatación Térmica (ASME B89.6.2)</h2>
+              <p>
+                De acuerdo con ASME B89.6.2 e ISO 1, la temperatura normalizada de referencia para toda la ingeniería dimensional es <strong>20 °C (68 °F)</strong>. Cuando las mediciones se realizan a temperaturas distintas, se genera un sesgo por dilatación térmica diferencial entre el gage y la pieza maquinada:
+              </p>
+              <div class="formula-box">
+                \Delta E = L \cdot \left[ \alpha_{pieza}(T_{pieza}-20) - \alpha_{gage}(T_{gage}-20) \right]
+              </div>
+              <p style="margin-top: 0.75rem;">
+                En All Measuring Gage recomendamos que los calibradores y las piezas pasen por un período mínimo de estabilización térmica de <strong>1 hora por pulgada de espesor</strong> en cuartos de metrología con control de \(\pm 1^\circ\text{C}\) antes de emitir un dictamen final sobre características de tolerancia cerrada.
+              </p>
+            </section>
+
+            <!-- Sección 8 -->
+            <section id="doc-roscas">
+              <h2 class="document-section-title">8. Calibradores de Rosca (ASME B1.2)</h2>
+              <p>
+                En calibradores roscados para roscas Unified (UN/UNF/UNC según ASME B1.1 y B1.2), la verificación funcional se enfoca en el Diámetro de Paso (Pitch Diameter, \(E\)). Los calibradores macho (plugs) y hembra (rings) incorporan especificaciones particulares:
+              </p>
+              <ul style="margin: 0.75rem 0 0.75rem 1.5rem; color: var(--text-secondary);">
+                <li><strong>Extremo GO de Rosca:</strong> Posee el perfil completo del filete y longitud completa de acoplamiento, comprobando el diámetro de paso mínimo y garantizando que no exista interferencia por errores acumulados de paso helicoidal o ángulo de flanco.</li>
+                <li><strong>Extremo NO-GO de Rosca:</strong> Posee crestas fuertemente truncadas y un número reducido de hilos (típicamente 2 a 3 filetes). Su objetivo es verificar exclusivamente que el diámetro de paso no exceda el límite máximo de material mínimo, sin hacer contacto en las raíces ni crestas.</li>
+              </ul>
+            </section>
+
+            <!-- Sección 9 -->
+            <section id="doc-gestion">
+              <h2 class="document-section-title">9. Aseguramiento Metrológico en All Measuring Gage</h2>
+              <p>
+                La política metrológica de <strong>All Measuring Gage</strong> garantiza que cada calibrador suministrado cumpla estrictamente con:
+              </p>
+              <ol style="margin: 0.75rem 0 0.75rem 1.5rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Certificado de calibración dimensional con trazabilidad demostrada hacia patrones nacionales (CENAM) e internacionales (NIST).</li>
+                <li>Declaración explícita de incertidumbre expandida (\(U_{95}\)) y factor de cobertura (\(k=2\)).</li>
+                <li>Evaluación de redondez y rectitud según ASME B89.1.5.</li>
+                <li>Asesoría personalizada dirigida por la <strong>Ing. Patricia Flores Reyes</strong> para el dimensionamiento de gages especiales, diseño de fixtures de inspección y capacitación en piso de planta.</li>
+              </ol>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VISTA 3: LABORATORIO DE CÁLCULO INTERACTIVO
+           ==================================================================== -->
+      <section id="calculatorView" class="calc-view">
+        <div style="margin-bottom: 2rem;">
+          <span class="slide-header-badge">Laboratorio de Ingeniería &middot; Herramientas Interactivas</span>
+          <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-primary);">Calculadoras Metrológicas ASME</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Dimensionamiento preciso de gages, reglas de decisión con incertidumbre y compensación térmica</p>
+        </div>
+
+        <!-- CALCULADORA 1: ASME B89.1.5 & Y14.43 GAGEMAKER TOLERANCE -->
+        <div class="calculator-card">
+          <div class="metro-card-header">
+            <span class="metro-card-title"><span>📏</span> 1. Calculadora de Tolerancias de Fabricación de Gages (ASME B89.1.5 / Y14.43)</span>
+            <span class="metro-badge asme">Gagemaker Engine</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+            Calcula la clase de gage recomendada, límites exactos GO (con desgaste) y NO-GO bajo la Práctica Absoluta ASME Y14.43.
+          </p>
+
+          <div class="form-group-grid">
+            <div class="form-field">
+              <label class="form-label" for="inputNominalDiameter">Diámetro Nominal de Pieza</label>
+              <input type="number" id="inputNominalDiameter" class="form-input" value="25.0" step="0.001">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="inputPartTolerance">Tolerancia Total de Pieza (IT)</label>
+              <input type="number" id="inputPartTolerance" class="form-input" value="0.040" step="0.001">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="selectUnit">Sistema de Unidades</label>
+              <select id="selectUnit" class="form-select">
+                <option value="mm" selected>Milímetros (mm)</option>
+                <option value="in">Pulgadas (in)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="selectGageType">Tipo de Característica</label>
+              <select id="selectGageType" class="form-select">
+                <option value="plug" selected>Agujero Interno (Plug Gage)</option>
+                <option value="ring">Eje Externo (Ring Gage)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="selectWearAllowance">Margen de Desgaste (+W)</label>
+              <select id="selectWearAllowance" class="form-select">
+                <option value="5" selected>5% de la Tol. de Pieza (Estándar)</option>
+                <option value="10">10% de la Tol. de Pieza (Alta Duración)</option>
+                <option value="0">0% (Sin Desgaste - Calibrador Maestro)</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="btnCalculateGage" class="calc-btn-primary">
+            <span>⚡</span> <span>Calcular Tolerancias del Gage</span>
+          </button>
+
+          <!-- Resultados Calculadora 1 -->
+          <div class="calc-result-box">
+            <div class="calc-result-grid">
+              <div class="stat-metric">
+                <div class="stat-label">Clase Recomendada</div>
+                <div class="stat-value" id="resRecommendedClass">Clase X</div>
+              </div>
+              <div class="stat-metric">
+                <div class="stat-label">Tolerancia del Fabricante (AMG)</div>
+                <div class="stat-value" id="resGageTol" style="font-size: 1.1rem;">1.5 µm</div>
+              </div>
+              <div class="stat-metric">
+                <div class="stat-label">Comprobación Regla 10:1</div>
+                <div class="stat-value" id="resTenPercentCheck" style="font-size: 1.1rem; color: var(--color-go);">3.75% (OK)</div>
+              </div>
+              <div class="stat-metric">
+                <div class="stat-label">Margen de Desgaste (+W)</div>
+                <div class="stat-value" id="resWearVal" style="font-size: 1.1rem; color: var(--brand-amber);">0.0020 mm</div>
+              </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 1.25rem;">
+              <div class="metro-card" style="border-left: 4px solid var(--color-go);">
+                <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-go);">Límites de Fabricación Extremo PASA (GO)</span>
+                <div id="resGoLimits" style="font-size: 1.15rem; font-family: var(--font-mono); margin-top: 0.35rem;">-</div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Incluye margen de desgaste inicial y tolerancia positiva de manufactura.</p>
+              </div>
+
+              <div class="metro-card" style="border-left: 4px solid var(--color-nogo);">
+                <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-nogo);">Límites de Fabricación Extremo NO PASA (NO-GO)</span>
+                <div id="resNoGoLimits" style="font-size: 1.15rem; font-family: var(--font-mono); margin-top: 0.35rem;">-</div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Ubicado exactamente en el límite LMC con tolerancia hacia el interior del producto.</p>
+              </div>
+            </div>
+
+            <div class="diagram-container" style="margin-top: 1.25rem;">
+              <svg id="gageToleranceSvg" class="diagram-svg" viewBox="0 0 800 240"></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- CALCULADORA 2: ASME B89.7.3.1 GUARDBANDING -->
+        <div class="calculator-card">
+          <div class="metro-card-header">
+            <span class="metro-card-title"><span>🛡️</span> 2. Calculadora de Reglas de Decisión y Guardbanding (ASME B89.7.3.1)</span>
+            <span class="metro-badge warn">Incertidumbre &amp; Riesgo</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+            Evalúa el ratio TUR frente al requisito mínimo recomendado (TUR &ge; 4:1) y determina la banda de seguridad para minimizar el riesgo del consumidor a &le; 2%.
+          </p>
+
+          <div class="form-group-grid">
+            <div class="form-field">
+              <label class="form-label" for="inputLSL">Límite Inferior de Especificación (LSL)</label>
+              <input type="number" id="inputLSL" class="form-input" value="24.980" step="0.001">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="inputUSL">Límite Superior de Especificación (USL)</label>
+              <input type="number" id="inputUSL" class="form-input" value="25.020" step="0.001">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="inputU95">Incertidumbre Expandida (\(U_{95}, k=2\))</label>
+              <input type="number" id="inputU95" class="form-input" value="0.0025" step="0.0001">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="selectGuardbandMultiplier">Multiplicador Guardband (\(r\))</label>
+              <select id="selectGuardbandMultiplier" class="form-select">
+                <option value="1.0" selected>r = 1.0 (Guardband Completo ASME - Riesgo &le; 2%)</option>
+                <option value="0.8">r = 0.8 (Guardband Reducido)</option>
+                <option value="0.0">r = 0.0 (Aceptación Simple - Riesgo Compartido)</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="btnCalculateGuardband" class="calc-btn-primary">
+            <span>⚡</span> <span>Evaluar TUR y Zona de Decisión</span>
+          </button>
+
+          <div class="calc-result-box">
+            <div class="calc-result-grid">
+              <div class="stat-metric">
+                <div class="stat-label">Test Uncertainty Ratio (TUR)</div>
+                <div class="stat-value" id="resTUR">8.00 : 1</div>
+              </div>
+              <div class="stat-metric">
+                <div class="stat-label">Dictamen Normativo</div>
+                <div class="stat-value" id="resTURVerdict" style="font-size: 0.9rem; padding: 0.35rem 0.5rem;">CONFORME</div>
+              </div>
+              <div class="stat-metric">
+                <div class="stat-label">Valor del Guardband (g)</div>
+                <div class="stat-value" id="resGuardbandVal" style="font-size: 1.1rem; color: var(--brand-guardband);">g = 0.0025 mm</div>
+              </div>
+              <div class="stat-metric">
+                <div class="stat-label">Tolerancia Consumida por g</div>
+                <div class="stat-value" id="resLostTol" style="font-size: 1.1rem; color: var(--brand-amber);">12.5%</div>
+              </div>
+            </div>
+
+            <div class="callout" style="margin-top: 1rem;">
+              <strong style="color: var(--brand-cyan);">Intervalo de Aceptación Estricta Guardbanded:</strong>
+              <span id="resAcceptRange" style="font-family: var(--font-mono); margin-left: 0.5rem; font-size: 1.05rem;">[ 24.9825 a 25.0175 mm ]</span>
+            </div>
+
+            <div class="diagram-container" style="margin-top: 1.25rem;">
+              <svg id="guardbandSvg" class="diagram-svg" viewBox="0 0 800 220"></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- CALCULADORA 3: ASME B89.6.2 THERMAL EXPANSION -->
+        <div class="calculator-card">
+          <div class="metro-card-header">
+            <span class="metro-card-title"><span>🌡️</span> 3. Calculadora de Error Térmico Diferencial (ASME B89.6.2)</span>
+            <span class="metro-badge warn">Ambiente &middot; 20°C</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+            Calcula la diferencia de dilatación entre el material del calibrador y el material de la pieza de trabajo fuera de la temperatura de referencia internacional de 20 °C.
+          </p>
+
+          <div class="form-group-grid">
+            <div class="form-field">
+              <label class="form-label" for="inputThermalLength">Longitud / Diámetro Nominal (mm)</label>
+              <input type="number" id="inputThermalLength" class="form-input" value="100.0" step="1">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="inputAmbientTemp">Temperatura Ambiente Actual (°C)</label>
+              <input type="number" id="inputAmbientTemp" class="form-input" value="25.0" step="0.5">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="selectGageMaterial">Material del Gage</label>
+              <select id="selectGageMaterial" class="form-select">
+                <option value="steel" selected>Acero de Herramientas (11.5 µm/m·°C)</option>
+                <option value="carbide">Carburo de Tungsteno (5.0 µm/m·°C)</option>
+                <option value="ceramic">Cerámica Zirconia (9.2 µm/m·°C)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="selectPartMaterial">Material de la Pieza Maquinada</label>
+              <select id="selectPartMaterial" class="form-select">
+                <option value="aluminum" selected>Aluminio 6061 (23.0 µm/m·°C)</option>
+                <option value="steel">Acero al Carbón (11.5 µm/m·°C)</option>
+                <option value="brass">Latón (18.5 µm/m·°C)</option>
+                <option value="titanium">Titanio (8.6 µm/m·°C)</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="btnCalculateThermal" class="calc-btn-primary">
+            <span>⚡</span> <span>Calcular Error Térmico Diferencial</span>
+          </button>
+
+          <div class="calc-result-box">
+            <div class="calc-result-grid">
+              <div class="stat-metric">
+                <div class="stat-label">Gradiente Térmico (\(\Delta T\))</div>
+                <div class="stat-value" id="resDeltaTemp">+5.0 °C</div>
+              </div>
+              <div class="stat-metric">
+                <div class="stat-label">Expansión del Gage</div>
+                <div class="stat-value" id="resExpGage">5.75 µm</div>
+              </div>
+              <div class="stat-metric">
+                <div class="stat-label">Expansión de la Pieza</div>
+                <div class="stat-value" id="resExpPart">11.50 µm</div>
+              </div>
+              <div class="stat-metric">
+                <div class="stat-label">Error Metrológico Neto (\(\Delta E\))</div>
+                <div class="stat-value" id="resDiffError" style="color: var(--brand-rose);">5.75 µm</div>
+              </div>
+            </div>
+
+            <div id="resThermalImpactAlert" class="callout warning" style="margin-top: 1rem;">
+              <!-- Se actualiza por JS -->
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           VISTA 4: QUIZ DE EVALUACIÓN INTERACTIVO
+           ==================================================================== -->
+      <section id="quizView" class="calc-view">
+        <div style="margin-bottom: 2rem;">
+          <span class="slide-header-badge">Evaluación de Capacitación &middot; All Measuring Gage</span>
+          <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-primary);">Evaluación de Rigor Metrológico ASME</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Comprueba la asimilación técnica de los conceptos presentados por la Ing. Patricia Flores Reyes.</p>
+        </div>
+
+        <div id="quizQuestionsContainer">
+          <!-- Renderizado por JS con retroalimentación instantánea -->
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Scripts de la Aplicación -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
